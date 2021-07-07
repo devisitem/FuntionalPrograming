@@ -2,6 +2,7 @@ package com.company.functional;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Supplier;
 
 
 public class FunctionTest {
@@ -47,5 +48,22 @@ public class FunctionTest {
         System.out.println("computeValue = " + computeValue);
         System.out.println("----------------");
 
+        String result = changIntToString(21, () -> "21 + 64 :");
+
+        System.out.println("result = " + result);
     }
+
+
+    public static String changIntToString (int target, Supplier<? extends String> returnString ){
+        if(target != 0){
+            target += 64;
+             String temp = String.valueOf((char) target);
+
+            return returnString.get().concat(" ").concat(temp);
+        } else {
+            return null;
+        }
+    }
+
+
 }
