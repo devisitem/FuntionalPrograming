@@ -1,7 +1,10 @@
 package com.company.functional;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 
@@ -64,6 +67,13 @@ public class FunctionTest {
             return null;
         }
     }
+    public static String getCheckDay(int day, Predicate<? super Integer> predicate){
+        String today = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd"));
 
+        if(predicate.test(today)){
+
+        }
+        return null;
+    }
 
 }
