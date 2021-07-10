@@ -70,7 +70,11 @@ public class FunctionTest {
     public static String getCheckDay(int checkDay, Predicate<? super Integer> predicate){
         String today = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd"));
 
+        if(predicate.test(checkDay)){
 
+        } else if(predicate.negate(Integer.valueOf(checkDay))){
+
+        }
 
         return null;
     }
